@@ -27,6 +27,7 @@ build/
 dist/
 
 # Virtual environment (if you have one in the repo)
+.ropeproject/
 venv/
 .venv/
 env/
@@ -80,8 +81,15 @@ dependencies = [
     "matplotlib",
 ]
 
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+
 [tool.setuptools]
 packages = ["$input"]
 EOF
 
+python3 -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip
 pip install -e .
