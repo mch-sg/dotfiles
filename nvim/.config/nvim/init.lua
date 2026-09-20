@@ -10,17 +10,31 @@ vim.g.contrastic_contrast = "hard"
 -- 
 -- KEYBINDS 
 --
+local map = vim.keymap.set
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-vim.keymap.set("i", "<M-BS>", "<C-w>", { desc = "Delete word backward" })
-vim.keymap.set({ "i", "c" }, "<C-a>", "<Home>")
-vim.keymap.set({ "i", "c" }, "<C-e>", "<End>")
-vim.keymap.set({ "i", "n", "v" }, "<F15>", "<Cmd>normal! gg<CR>")
-vim.keymap.set({ "i", "n", "v" }, "<F16>", "<Cmd>normal! G$<CR>")
-vim.keymap.set({"n", "v"}, "<C-j>", "10j")
-vim.keymap.set({"n", "v"}, "<C-k>", "10k")
-vim.keymap.set({"n", "v"}, "<C-h>", "5h")
-vim.keymap.set({"n", "v"}, "<C-l>", "5l")
+map("i", "<M-BS>", "<C-w>", { desc = "Delete word backward" })
+map({ "i", "c" }, "<C-a>", "<Home>")
+map({ "i", "c" }, "<C-e>", "<End>")
+map({ "i", "n", "v" }, "<F15>", "<Cmd>normal! gg<CR>")
+map({ "i", "n", "v" }, "<F16>", "<Cmd>normal! G$<CR>")
+map({"n", "v"}, "<C-j>", "10j")
+map({"n", "v"}, "<C-k>", "10k")
+map({"n", "v"}, "<C-h>", "5h")
+map({"n", "v"}, "<C-l>", "5l")
+
+-- insert: jump to start of previous word / end of next word
+map("i", "<A-Left>",  "<C-o>b",         { desc = "Word start (back)" })
+map("i", "<A-Right>", "<C-o>e<Right>",  { desc = "Word end (forward)" })
+
+-- insert: select to line start / end (select mode, returns to insert afterwards)
+map("i", "<D-S-Left>",  "<C-o>v0<C-g>",   { desc = "Select to line start" })
+map("i", "<D-S-Right>", "<C-o>v$h<C-g>",  { desc = "Select to line end" })
+-- select mode: copy to system clipboard, back to insert
+map("s", "<D-c>", '<C-g>"+y', { desc = "Copy selection" })
+-- keep the move mappings as they were
+map("i", "<A-Down>", "<Cmd>m .+1<CR>", { desc = "Move line down" })
+map("i", "<A-Up>",   "<Cmd>m .-2<CR>", { desc = "Move line up" })
 
 --
 -- Bootstrap lazy.nvim

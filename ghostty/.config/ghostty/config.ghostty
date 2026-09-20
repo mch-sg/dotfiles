@@ -21,6 +21,14 @@ keybind = cmd+right=text:\x05
 keybind = cmd+up=text:\x1b[28~
 keybind = cmd+down=text:\x1b[29~
 
+keybind = cmd+shift+left=csi:1;10D
+keybind = cmd+shift+right=csi:1;10C
+keybind = cmd+c=csi:99;9u
+keybind = alt+up=csi:1;3A
+keybind = alt+down=csi:1;3B
+
+keybind = alt+left=csi:1;3D
+keybind = alt+right=csi:1;3C
 
 ##
 ## COPIED

@@ -62,6 +62,11 @@ alias ghp="git push origin main"
 alias gp="/Users/mhvidtfeldt/scripts/dtu-push.sh"
 alias pdtu="/Users/mhvidtfeldt/scripts/dtu-push.sh"
 
+ghsync() {
+  [[ -z $1 ]] && { echo "Usage: gpush \"message\""; return 1 }
+  git add -A && git commit -m "$1" && git push origin main
+}
+
 alias depn='pip install -r /Users/mhvidtfeldt/dev/repos/dotfiles/preqs.txt'
 
 alias initp="/Users/mhvidtfeldt/scripts/init.sh"
