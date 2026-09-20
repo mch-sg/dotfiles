@@ -17,6 +17,10 @@ vim.keymap.set({ "i", "c" }, "<C-a>", "<Home>")
 vim.keymap.set({ "i", "c" }, "<C-e>", "<End>")
 vim.keymap.set({ "i", "n", "v" }, "<F15>", "<Cmd>normal! gg<CR>")
 vim.keymap.set({ "i", "n", "v" }, "<F16>", "<Cmd>normal! G$<CR>")
+vim.keymap.set({"n", "v"}, "<C-j>", "10j")
+vim.keymap.set({"n", "v"}, "<C-k>", "10k")
+vim.keymap.set({"n", "v"}, "<C-h>", "5h")
+vim.keymap.set({"n", "v"}, "<C-l>", "5l")
 
 --
 -- Bootstrap lazy.nvim

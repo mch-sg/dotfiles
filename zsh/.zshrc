@@ -38,6 +38,7 @@ export ARCHFLAGS="-arch $(uname -m)"
 alias cat=bat
 alias ls='ls -A'
 alias cl="clear"
+alias nv=nvim
 
 # Dirs
 alias ..="cd .."
@@ -63,12 +64,14 @@ alias pdtu="/Users/mhvidtfeldt/scripts/dtu-push.sh"
 
 alias depn='pip install -r /Users/mhvidtfeldt/dev/repos/dotfiles/preqs.txt'
 
-alias init="/Users/mhvidtfeldt/scripts/init.sh"
+alias initp="/Users/mhvidtfeldt/scripts/init.sh"
 
 # course specific aliases
 alias pms="/Users/mhvidtfeldt/scripts/02635-make.sh"
 alias dex="/Users/mhvidtfeldt/scripts/delexecutables.sh"
 
+
+zopen() { open -a Zen "$@"; }
 
 ##
 ## Convert .md / .ipynb to custom LaTeX pdf file

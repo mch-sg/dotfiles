@@ -10,7 +10,7 @@ add_newline = false
 #$character"""
 
 format = """
-$username$directory$zig$nix_shell[~](white)$character"""
+$username$directory$zig$nix_shell[∴](blue)$character"""
 
 right_format = """$git_branch$conda$time"""
 
