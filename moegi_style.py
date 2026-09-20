@@ -10,7 +10,6 @@ class MoegiLightStyle(Style):
     background_color = "#FAFAF6"
     default_style = ""
 
-    # Adjust these five if the rendering doesn't match your memory of it.
     KEYWORD = "#AD4033"
     NUMBER = "#C97B3D"
     STRING = "#8A8C3E"
