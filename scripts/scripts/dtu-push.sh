@@ -1,5 +1,5 @@
 #!/bin/bash
-cd "FILEPATH GOES HERE"
+cd "/Users/mhvidtfeldt/dtu"
 git add .
 if ! git diff --cached --quiet; then
     git commit -m "git-$(date +"%d-%m-%y-%I:%M-%p" | tr '[:upper:]' '[:lower:]')"

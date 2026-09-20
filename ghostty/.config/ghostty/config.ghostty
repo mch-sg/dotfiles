@@ -1,0 +1,121 @@
+theme = Ultra Dark 
+## 12-bit Rainbow
+## Adventure, Alabaster, Flexoki Dark , iTerm2 Tango Light
+font-family = "JetBrains Mono"
+# Hack Regular, JetBrains Mono, Hack Nerd Font
+font-size = 15
+## ^^ 14
+adjust-cell-height = 10%
+font-style = "Bold"
+
+# Match the background to pure white or parchment
+#background = #ffffff
+#foreground = #1e1e1e
+
+##
+## KEYBINDS
+##
+keybind = cmd+backspace=text:\x15
+keybind = cmd+left=text:\x01
+keybind = cmd+right=text:\x05
+keybind = cmd+up=text:\x1b[28~
+keybind = cmd+down=text:\x1b[29~
+
+
+##
+## COPIED
+##
+
+window-save-state = always
+gtk-titlebar = false
+
+# --- Window & Canvas (Warp's breathing room) ---
+window-theme = ghostty
+window-padding-x = 10
+window-padding-y = 8
+window-padding-balance = true
+window-padding-color = extend
+
+# macOS Titlebar (matches window background seamlessly)
+macos-titlebar-style = tabs 
+# ^^ hidden, tabs
+window-decoration = true 
+# ^^ none
+macos-option-as-alt = left
+
+# Subtle modern background blur
+background-opacity = 1
+background-blur = 40
+
+# --- Cursor (Warp accent bar/block) ---
+cursor-style = block
+cursor-style-blink = false
+#cursor-color = #00e5ff
+#cursor-text = #0d0f12
+shell-integration-features = no-cursor
+
+# --- Mouse & Scrolling ---
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 2
+
+# --- Colors: Warp Dark Signature Palette ---
+#background = #000000
+#foreground = #e6edf3
+#selection-background = #2b3245
+#selection-foreground = #ffffff
+
+
+
+##
+## THEME
+##
+
+#background = 141413
+#foreground = faf9f5
+
+#cursor-color = d97757
+#cursor-text = 141413
+
+#selection-background = 2d2d2b
+#selection-foreground = faf9f5
+
+
+palette = 0=#0a0a0a
+palette = 1=#c06d44
+palette = 2=#afb97a
+palette = 3=#c2a86c
+palette = 4=#44474a
+palette = 5=#b4be7c
+palette = 6=#778385
+palette = 7=#ffffff
+palette = 8=#404040
+palette = 9=#de7c4c
+palette = 10=#ccd88c
+palette = 11=#c06d44 
+##  e2c47e
+palette = 12=#5a5e62
+palette = 13=#d0dc8e
+palette = 14=#8a989b 
+## 8a989b
+palette = 15=#ffffff
+palette = 121=#ccd88c
+palette = 81=#4485BE
+
+
+# DARK MODE
+#
+background = #0a0a0a
+foreground = #ffffff
+
+# LIGHT MODE
+#
+#background = #ffffff
+#foreground = #0a0a0a
+
+cursor-color = #ffffff
+cursor-text = #000000
+selection-background = #313131
+selection-foreground = #ffffff
+
+
+

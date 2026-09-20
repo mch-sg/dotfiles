@@ -1,0 +1,10 @@
+ipykernel
+numpy
+sympy
+matplotlib
+scipy
+notebook
+pytest
+pandas
+
+

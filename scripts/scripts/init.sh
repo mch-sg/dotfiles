@@ -1,18 +1,30 @@
 #!/bin/bash
-input="$*"
-cd "FILEPATH GOES HERE"
-mkdir "$input"
-cd $input
-git init
-mkdir "data"
-mkdir "notebooks"
-mkdir "tests"
-mkdir "$input"
+set -e
+input="$1"
+cd "/Users/mhvidtfeldt/dev/repos/"
 
+if [ -z "$input" ]; then
+    echo "Usage: newproject <name>"
+    exit 1
+fi
+if [ -d "/Users/mhvidtfeldt/dev/repos/$input" ]; then
+    echo "Directory already exists, aborting."
+    exit 1
+fi
+
+mkdir "$input"
+cd "$input"
+
+git init 
+mkdir src data notebooks tests docs
+
+cd src
+mkdir "$input"
 cd $input
 cat > __init__.py <<EOF
 EOF
 
+cd ..
 cd ..
 
 cat > .gitignore <<EOF
@@ -23,8 +35,8 @@ __pycache__/
 # Packaging artifacts from pip install -e .
 *.egg-info/
 *.egg
-build/
-dist/
+.pytest_cache/
+.pytest_cache
 
 # Virtual environment (if you have one in the repo)
 .ropeproject/
@@ -81,15 +93,24 @@ dependencies = [
     "matplotlib",
 ]
 
-[tool.pyright]
-venvPath = "."
-venv = ".venv"
+[project.optional-dependencies]
+p = ["pandas", "scipy"]
+nb = ["ipykernel", "notebook"]
+ml = ["scikit-learn", "torch", "nltk"]
+test = ["pytest", "pytest-cov"]
+dev = ["ruff", "mypy"]
+gpu = ["cupy"]
 
-[tool.setuptools]
-packages = ["$input"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
 EOF
 
-python3 -m venv .venv
-source .venv/bin/activate
+
+source "$(conda info --base)/etc/profile.d/conda.sh"
+conda create -y -n "$input" python=3.13
+conda activate "$input"
 pip install --upgrade pip
-pip install -e .
+pip install -e ".[nb,test,dev]"
+
+echo "Done. Run: conda activate $input"

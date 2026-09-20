@@ -1,0 +1,63 @@
+# Do not add a blank line before the prompt
+add_newline = false
+
+# Single-line format without $line_break
+#format = """
+#$username\
+#$hostname\
+#$directory\
+#$git_branch\
+#$character"""
+
+format = """
+$username$directory$zig$nix_shell[~](white)$character"""
+
+right_format = """$git_branch$conda$time"""
+
+
+
+[conda]
+format = " via [$symbol$environment]($style) "
+symbol="⚙ "
+style = "bold blue" # 4485BE
+ignore_base = true
+
+# User & Host (Cyan, transparent background)
+[username]
+show_always = true
+style_user = "bold red" #b23a48 #415a77 REAL IS b23a48
+format = "[$user]($style)"
+
+[hostname]
+ssh_only = false
+style = "bold #666666"
+format = "[@$hostname]($style)"
+
+# Directory (Pink, transparent background)
+[directory]
+truncation_length = 2
+truncate_to_repo = true
+truncation_symbol = ""
+style = "bold green" # #a3b18a 415a77 ## light green: a3b18a
+format = "[ $path]($style) "
+
+# Git Branch (Warm Yellow, transparent background)
+[git_branch]
+style = "bold yellow" # facc15 D0A215
+format = "[ $branch]($style)"
+
+# Git Status (Light Yellow, transparent background)
+[git_status]
+style = "bold #fef08a"
+format = "([ $all_status$ahead_behind]($style) )"
+modified = "+$count "
+staged = "•$count "
+deleted = "-$count "
+untracked = "?$count "
+ahead = "⇡$count "
+behind = "⇣$count "
+
+# Inline prompt symbol (or set to "$ " if you prefer classic shell style)
+[character]
+success_symbol = "[](bold white)"
+error_symbol = "[](bold red) "
