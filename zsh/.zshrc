@@ -39,6 +39,7 @@ alias cat=bat
 alias ls='ls -A'
 alias cl="clear"
 alias nv=nvim
+alias jnb="jupyter notebook"
 
 # Dirs
 alias ..="cd .."

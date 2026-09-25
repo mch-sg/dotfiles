@@ -49,7 +49,8 @@ macos-titlebar-style = tabs
 # ^^ hidden, tabs
 window-decoration = true 
 # ^^ none
-macos-option-as-alt = left
+macos-option-as-alt = false
+# ^^ left
 
 # Subtle modern background blur
 background-opacity = 1

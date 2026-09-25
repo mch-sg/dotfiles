@@ -75,3 +75,5 @@ class MoegiLightStyle(Style):
 
         Text: TEXT,
     }
+
+MoegilightStyle = MoegiLightStyle

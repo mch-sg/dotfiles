@@ -61,6 +61,12 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 -- Install themes
 --
 require("lazy").setup({
+	{
+  "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
+},
+
+
   { "nuvic/flexoki-nvim", name="flexoki-nvim"},
   { "aikhe/fleur.nvim", name="fleur.nvim"},
   { "paulo-granthon/hyper.nvim", name="hyper.vim"},
